@@ -1,10 +1,19 @@
 import { server } from './socket/socket.js'
 import { connectDB } from './database/index.js';
 import dotenv from 'dotenv'
+import { app } from './app.js';
+import path from "path";
+import express from 'express';
 
-dotenv.config({
-    path: './.env'
-})
+dotenv.config({})
+
+const __dirname = path.resolve();
+
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+});
 
 connectDB()
 .then(() => {
