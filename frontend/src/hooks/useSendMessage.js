@@ -8,6 +8,7 @@ const useSendMessage = () => {
     const [loading, setLoading] = useState(false);
 
     const {messages, setMessages, selectedConversation} = useConversation();
+    console.log(messages)
 
     const sendMessage = async ( {message} ) => {
 
@@ -25,7 +26,9 @@ const useSendMessage = () => {
             )
 
             const newMessage = response.data.data.newMessage;
-            setMessages([...messages, newMessage])
+            // Ensure messages is an array before spreading
+            const updatedMessages = Array.isArray(messages) ? [...messages, newMessage] : [newMessage];
+            setMessages(updatedMessages);
             
         } catch (error) {
 
