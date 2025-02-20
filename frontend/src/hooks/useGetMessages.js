@@ -14,7 +14,7 @@ const useGetMessages = () => {
 
             try {
 
-                const response = await axios.get(`http://localhost:3000/api/messages/${selectedConversation?._id}`,
+                const response = await axios.get(`/api/messages/${selectedConversation?._id}`,
                     {
                         withCredentials: true,
                         headers: {

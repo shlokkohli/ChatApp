@@ -19,7 +19,7 @@ const useLogin = () => {
         try {
 
             // first we need to make a post request to the login backend
-            const response = await axios.post('http://localhost:3000/api/auth/login', {
+            const response = await axios.post('/api/auth/login', {
                 username,
                 password
             },

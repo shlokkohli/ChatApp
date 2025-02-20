@@ -20,7 +20,7 @@ export const SocketContextProvider = ({children}) => {
     useEffect(() => {
         // if there is an authenticated user, create a socket connection
         if(authUser){
-            const newSocket = io('http://localhost:3000/', {
+            const newSocket = io('/', {
                 query: {
                     userId: authUser._id
                 }

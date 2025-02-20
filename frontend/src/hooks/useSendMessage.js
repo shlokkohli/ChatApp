@@ -15,7 +15,7 @@ const useSendMessage = () => {
 
         try {
 
-            const response = await axios.post(`http://localhost:3000/api/messages/send/${selectedConversation?._id}`,
+            const response = await axios.post(`/api/messages/send/${selectedConversation?._id}`,
                 { message },
                 {withCredentials: true,
                 headers: {

@@ -12,7 +12,7 @@ const useGetConversations = () => {
             setLoading(true)
             try {
 
-                const response = await axios.get('http://localhost:3000/api/users',
+                const response = await axios.get('/api/users',
                     {withCredentials: true,
                         headers: {
                             'Content-Type': 'application/json'
